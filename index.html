@@ -207,6 +207,18 @@
         console.log("Chưa thể phát nhạc: " + error);
     });
 }, { once: true });
+function playAudioOnInteraction() {
+    bgMusic.play()
+        .then(() => {
+            console.log("Đã phát nhạc thành công!");
+        })
+        .catch(error => {
+            console.log("Vẫn chưa phát được: " + error);
+        });
+}
+
+// Lắng nghe sự kiện click trên toàn trang web
+document.addEventListener('click', playAudioOnInteraction, { once: true });
         const loader = new THREE.TextureLoader();
         const photoFiles = ['./img/a1.jpg', './img/a2.jpg', './img/a3.jpg', './img/a4.jpg'];
         const photoTextures = [];
